@@ -1,42 +1,17 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include "randfuncs.h"
+
 using namespace std;
 
-int main() {
-    double a, b;
-    char op;
+int main()
+{
+    srand(time(0));
 
-    cout << "Enter first number: ";
-    cin >> a;
-
-    cout << "Enter operator (+, -, *, /): ";
-    cin >> op;
-
-    cout << "Enter second number: ";
-    cin >> b;
-
-    switch (op) {
-        case '+':
-            cout << "Result: " << a + b << endl;
-            break;
-
-        case '-':
-            cout << "Result: " << a - b << endl;
-            break;
-
-        case '*':
-            cout << "Result: " << a * b << endl;
-            break;
-
-        case '/':
-            if (b != 0)
-                cout << "Result: " << a / b << endl;
-            else
-                cout << "Error: Division by zero" << endl;
-            break;
-
-        default:
-            cout << "Invalid operator" << endl;
-    }
+    cout << "Coin flip: " << flipCoin() << endl;
+    cout << "6-sided die: " << rollD6() << endl;
+    cout << "10-sided die: " << rollD10() << endl;
 
     return 0;
 }
